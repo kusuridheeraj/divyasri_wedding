@@ -758,40 +758,18 @@ body.entered .scroll-indicator {
 .invitation-content {
   position: relative;
   z-index: 2;
-  max-width: 620px;
+  max-width: 600px;
   width: 100%;
   text-align: center;
-  padding: 3rem 1.2rem;
+  padding: 8rem 1.5rem 4rem;
   margin: 0 auto;
 }
-.invitation-card {
-  background: rgba(253, 246, 231, 0.94);
-  border: 1.5px solid var(--gold-rich);
-  border-radius: 4px;
-  padding: clamp(2.2rem, 5vw, 3.4rem) clamp(1.4rem, 4vw, 2.4rem);
-  box-shadow:
-    0 0 0 6px rgba(253, 246, 231, 0.75),
-    0 0 0 8px rgba(201, 169, 97, 0.45),
-    0 22px 55px rgba(74, 20, 24, 0.16);
-  backdrop-filter: blur(8px);
-  position: relative;
-}
-.invitation-card::before {
-  content: '✦';
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--cream-light);
-  color: var(--gold-rich);
-  padding: 0 0.8rem;
-  font-size: 1rem;
-}
+
 .invite-blessing {
   font-family: var(--font-devanagari);
   color: var(--kumkum);
   font-size: clamp(1rem, 1.8vw, 1.2rem);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
   font-weight: 500;
 }
@@ -799,9 +777,27 @@ body.entered .scroll-indicator {
   font-family: var(--font-body);
   font-style: italic;
   color: var(--maroon);
-  opacity: 0.88;
+  opacity: 0.85;
   font-size: clamp(1rem, 1.5vw, 1.15rem);
-  margin: 0.8rem 0;
+  margin: 1rem 0;
+}
+.invite-families {
+  font-family: var(--font-sacred);
+  font-size: clamp(0.95rem, 1.6vw, 1.18rem);
+  letter-spacing: 0.12em;
+  color: var(--maroon);
+  line-height: 1.8;
+  margin: 1.25rem 0 0.5rem;
+  font-weight: 700;
+}
+.invite-families strong {
+  display: block;
+  font-size: 0.72em;
+  letter-spacing: 0.32em;
+  color: var(--gold-rich);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
 }
 .invite-text {
   font-family: var(--font-body);
@@ -809,7 +805,7 @@ body.entered .scroll-indicator {
   font-style: italic;
   line-height: 1.75;
   color: var(--maroon);
-  margin: 1.2rem 0;
+  margin: 1rem 0;
   opacity: 0.92;
 }
 .invite-couple-names {
@@ -818,41 +814,6 @@ body.entered .scroll-indicator {
   margin: 0.6rem 0;
   line-height: 1.1;
   color: var(--gold-rich);
-}
-.invite-host-box {
-  margin-top: 1.2rem;
-  padding: 1.1rem 1.2rem;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1.5px dashed var(--gold-rich);
-  border-radius: 4px;
-  box-shadow: 0 4px 14px rgba(74, 20, 24, 0.06);
-}
-.invite-host-label {
-  font-family: var(--font-sacred);
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold-rich);
-  margin-bottom: 0.4rem;
-  font-weight: 700;
-  display: block;
-}
-.invite-host-names {
-  font-family: var(--font-sacred);
-  font-size: clamp(1rem, 2vw, 1.22rem);
-  font-weight: 700;
-  color: var(--maroon-deep);
-  letter-spacing: 0.06em;
-  line-height: 1.5;
-  display: block;
-}
-.invite-compliments {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
-  color: var(--maroon);
-  margin-top: 0.75rem;
-  opacity: 0.92;
 }
 .invite-couple-names .amp-inline {
   font-family: var(--font-sacred);
@@ -1317,35 +1278,33 @@ body.entered .scroll-indicator {
      ============================================ -->
 <section id="invitation" class="invitation bg-section">
   <div class="invitation-content reveal-up">
-    <div class="invitation-card">
-      <p class="invite-blessing">॥ श्रीरस्तु ॥ शुभमस्तु ॥ अविघ्नमस्तु ॥</p>
+    <p class="invite-blessing">॥ श्रीरस्तु ॥ शुभमस्तु ॥ अविघ्नमस्तु ॥</p>
 
-      <div class="section-label" style="margin-bottom:0.8rem;">Wedding Invitation</div>
+    <div class="section-label" style="margin-bottom:0.8rem;">Wedding Invitation</div>
 
-      <p class="invite-from">We cordially invite your gracious presence<br>on the auspicious occasion of the marriage of<br><em>Our Daughter</em></p>
+    <p class="invite-from">We cordially invite your gracious presence<br>on the auspicious occasion of the marriage of<br><em>Our Daughter</em></p>
 
-      <h3 class="invite-couple-names gold-shimmer" style="margin-bottom:0.2rem;">
-        Chi.Sow. Divya Sri
-      </h3>
-      <div style="font-family: var(--font-sacred); font-size: 0.85rem; letter-spacing: 0.35em; color: var(--gold-rich); text-transform: uppercase; margin: 0.3rem 0;">Weds</div>
-      <h3 class="invite-couple-names gold-shimmer" style="margin-top:0.2rem; margin-bottom:0.4rem;">
-        Chi. Mohan Goud
-      </h3>
-      <p class="invite-text" style="font-size: 0.98rem; margin: 0.2rem 0 1rem; opacity: 0.95;">
-        (Son of Smt. &amp; Sri Gaddam Sumathi - Jithender Goud)
-      </p>
+    <h3 class="invite-couple-names gold-shimmer" style="margin-bottom:0.2rem;">
+      Chi.Sow. Divya Sri
+    </h3>
+    <div style="font-family: var(--font-sacred); font-size: 0.85rem; letter-spacing: 0.35em; color: var(--gold-rich); text-transform: uppercase; margin: 0.3rem 0;">Weds</div>
+    <h3 class="invite-couple-names gold-shimmer" style="margin-top:0.2rem; margin-bottom:0.4rem;">
+      Chi. Mohan Goud
+    </h3>
+    <p class="invite-text" style="font-size: 0.98rem; margin: 0.2rem 0 1.2rem; opacity: 0.95;">
+      (Son of Smt. &amp; Sri Gaddam Sumathi - Jithender Goud)
+    </p>
 
-      <div class="ornament">✦</div>
+    <div class="ornament">✦</div>
 
-      <div class="invite-host-box">
-        <span class="invite-host-label">Invited by</span>
-        <span class="invite-host-names">Smt. &amp; Sri Kusuri Ramadevi - Srinu Goud</span>
-      </div>
-
-      <p class="invite-compliments">
-        <em>With Best Compliments from: Near &amp; Dear</em>
-      </p>
+    <div class="invite-families" style="margin-top: 1rem;">
+      <strong>Invited by:</strong>
+      Smt. &amp; Sri Kusuri Ramadevi - Srinu Goud
     </div>
+
+    <p class="invite-text" style="margin-top: 0.8rem; font-size: 0.95rem;">
+      <em>With Best Compliments from: Near &amp; Dear</em>
+    </p>
   </div>
 </section>
 
