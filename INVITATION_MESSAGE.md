@@ -116,6 +116,82 @@ Tap the link below to view the interactive invitation & get directions:
 
 ---
 
+## 👰 From the Bride (Chi.Sow. Divya Sri)
+
+### 1️⃣ For Besties, Girl Gang & Close Friends (Heartfelt, Joyful & Personal)
+
+```text
+Hey everyone! 💍✨
+
+I am super excited to share that I am getting married to Mohan Goud! 🌸❤️
+
+As I begin this beautiful new chapter of my life, I cannot imagine celebrating my special day without you. Your presence, love, and blessings mean the world to me!
+
+🗓️ Date: Sunday, 23rd August 2026
+⏰ Muhurtham: 11:29 AM
+📍 Venue: Aditya Convention A/c., Mamnoor, Warangal
+🍽️ Lunch Follows...
+
+Here is our digital wedding invitation with all the details, countdown, and directions:
+👉 https://kusuridheeraj.github.io/divyasri_wedding/
+
+Please consider this as my personal invitation. Can't wait to see you all there and make wonderful memories together! 💕
+
+With lots of love,
+Divya Sri
+```
+
+---
+
+### 2️⃣ For Colleagues, Teammates & Professional Network (Polite & Elegant)
+
+```text
+Dear Friends & Colleagues, 🙏✨
+
+I am delighted to share that I am stepping into a new phase of life and getting married to Mohan Goud.
+
+I cordially invite you and your family to join us on our auspicious wedding day and shower your warm blessings upon us.
+
+🗓️ Date: Sunday, 23rd August 2026 at 11:29 AM
+📍 Venue: Aditya Convention A/c., Mamnoor, Warangal
+🍽️ Lunch Follows...
+
+Please find our digital wedding invitation and location details in the link below:
+👉 https://kusuridheeraj.github.io/divyasri_wedding/
+
+Looking forward to celebrating with you!
+
+Warm regards,
+Divya Sri
+```
+
+---
+
+### 3️⃣ పెళ్లికూతురు (దివ్య శ్రీ) నుండి స్నేహితులకు & బంధువులకు (Simple & Sweet Telugu)
+
+```text
+హాయ్ ఫ్రెండ్స్ & అందరికీ నమస్కారం! 💕✨
+
+నేను మోహన్ గౌడ్ తో వివాహ బంధంలోకి అడుగుపెడుతున్నానని తెలియజేయడానికి ఎంతో సంతోషిస్తున్నాను! 💍🌸
+
+నా జీవితంలో ఎంతో ముఖ్యమైన ఈ ప్రత్యేక రోజున మీరందరూ తప్పకుండా వచ్చి మీ ప్రేమను, ఆశీస్సులను అందించాలని మనస్ఫూర్తిగా కోరుకుంటున్నాను.
+
+🗓️ తేదీ: ఆదివారం, 23 ఆగస్టు 2026
+⏰ ముహూర్తం: ఉదయం 11:29 గంటలకు
+📍 వేదిక: ఆదిత్య కన్వెన్షన్ A/c., మామ్నూర్, వరంగల్.
+🍽️ లంచ్: వివాహానంతరం
+
+డిజిటల్ ఆహ్వాన పత్రిక & లొకేషన్ మ్యాప్:
+👉 https://kusuridheeraj.github.io/divyasri_wedding/
+
+ఇదే నా వ్యక్తిగత ఆహ్వానంగా భావించి తప్పక రాగలరు!
+
+ఇట్లు,
+మీ దివ్య శ్రీ
+```
+
+---
+
 ## 🌺 తెలుగు ఆహ్వాన సందేశాలు (Simple Telugu Messages)
 
 ### 1️⃣ తల్లిదండ్రుల నుండి (బంధువులకు & స్నేహితులకు - సులభమైన శైలి)
