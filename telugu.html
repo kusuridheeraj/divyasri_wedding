@@ -1291,42 +1291,60 @@ body.entered .scroll-indicator {
     transition-duration: 0.01ms !important;
   }
   .petal { display: none; }
-.lang-switch {
+/* ============================================
+   SEGMENTED LUXURY LANGUAGE TOGGLE SWITCH
+   ============================================ */
+.lang-toggle {
   position: fixed;
   top: 1.25rem;
   right: 1.25rem;
   z-index: 100;
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1.05rem;
-  background: rgba(253, 246, 231, 0.94);
+  padding: 3px;
+  background: rgba(253, 246, 231, 0.95);
   border: 1.5px solid var(--gold-rich);
   border-radius: 999px;
-  color: var(--maroon-deep);
-  font-family: 'Cinzel', serif;
-  font-size: 0.82rem;
+  box-shadow: 0 4px 20px rgba(74, 20, 24, 0.14), 0 0 0 3px rgba(253, 246, 231, 0.6);
+  backdrop-filter: blur(8px);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lang-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-family: 'Cinzel', 'Noto Serif Devanagari', serif;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 18px rgba(74, 20, 24, 0.12);
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--maroon);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   -webkit-tap-highlight-color: transparent;
 }
-.lang-switch:hover {
-  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold-rich) 100%);
+.lang-option.active {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold-rich) 50%, var(--gold-bright) 100%);
   color: var(--cream-light);
-  border-color: var(--gold-rich);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184, 134, 46, 0.35);
+  box-shadow: 0 2px 10px rgba(184, 134, 46, 0.45);
+  cursor: default;
+}
+a.lang-option:hover {
+  color: var(--gold-deep);
+  background: rgba(201, 169, 97, 0.18);
+  transform: translateY(-1px);
 }
 @media (max-width: 640px) {
-  .lang-switch {
+  .lang-toggle {
     top: 0.85rem;
     right: 0.85rem;
-    padding: 0.38rem 0.85rem;
-    font-size: 0.76rem;
+    padding: 2px;
+  }
+  .lang-option {
+    padding: 0.28rem 0.68rem;
+    font-size: 0.72rem;
   }
 }
 </style>
@@ -1349,10 +1367,11 @@ body.entered .scroll-indicator {
   </div>
 </div>
 
-<!-- Floating Language Switcher -->
-<a href="index.html" class="lang-switch" title="View Invitation in English" aria-label="View in English">
-  🌐 English
-</a>
+<!-- Floating Segmented Language Toggle Switch -->
+<nav class="lang-toggle" aria-label="భాష ఎంపిక">
+  <a href="index.html" class="lang-option" title="View Invitation in English" aria-label="View Invitation in English">EN</a>
+  <span class="lang-option active" aria-current="page">తెలుగు</span>
+</nav>
 
 <!-- Ambient floating petals -->
 <div class="petals" id="petals" aria-hidden="true"></div>
