@@ -1292,6 +1292,44 @@ body.entered .scroll-indicator {
   }
   .petal { display: none; }
 }
+.lang-switch {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.05rem;
+  background: rgba(253, 246, 231, 0.94);
+  border: 1.5px solid var(--gold-rich);
+  border-radius: 999px;
+  color: var(--maroon-deep);
+  font-family: 'Noto Serif Devanagari', 'Cinzel', serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 18px rgba(74, 20, 24, 0.12);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-switch:hover {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold-rich) 100%);
+  color: var(--cream-light);
+  border-color: var(--gold-rich);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 134, 46, 0.35);
+}
+@media (max-width: 640px) {
+  .lang-switch {
+    top: 0.85rem;
+    right: 0.85rem;
+    padding: 0.38rem 0.85rem;
+    font-size: 0.76rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -1311,6 +1349,11 @@ body.entered .scroll-indicator {
     <div class="door door-right"></div>
   </div>
 </div>
+
+<!-- Floating Language Switcher -->
+<a href="telugu.html" class="lang-switch" title="తెలుగు ఆహ్వాన పత్రికను చూడండి" aria-label="తెలుగులో చూడండి">
+  🌐 తెలుగు
+</a>
 
 <!-- Ambient floating petals -->
 <div class="petals" id="petals" aria-hidden="true"></div>
