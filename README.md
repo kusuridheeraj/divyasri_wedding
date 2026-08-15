@@ -1,88 +1,62 @@
-# Divya Sri weds Mohan Goud — 23 August 2026
+# 💍 Divya Sri & Mohan Goud — Wedding Invitation Website
 
-Luxury cream-and-gold temple wedding invitation. Cinematic temple-door loader, hand-illustrated section backgrounds, live countdown, WhatsApp RSVP, and sacred typography.
+> ॥ శ్రీరస్తు ॥ శుభమస్తు ॥ అవిఘ్నమస్తు ॥
+
+A luxury, interactive, bilingual (English & Telugu) digital wedding invitation website for **Chi.Sow. Divya Sri & Chi. Mohan Goud**, celebrating their sacred union on **Sunday, 23rd August 2026** in Warangal.
+
+🌐 **Live Website (English)**: [https://kusuridheeraj.github.io/divyasri_wedding/](https://kusuridheeraj.github.io/divyasri_wedding/)  
+🌺 **Live Website (తెలుగు)**: [https://kusuridheeraj.github.io/divyasri_wedding/telugu.html](https://kusuridheeraj.github.io/divyasri_wedding/telugu.html)
 
 ---
 
-## 📂 Folder structure
+## ✨ Features
 
-Your repo looks like this:
+- 🚪 **Cinematic Temple Door Loader**: Authentic temple doors that part with Om aura glow and ambient particle sparks.
+- 🎵 **Smooth Background Music**: Fluid background playback with play/pause floating control.
+- 🌐 **Bilingual Support (English & Telugu)**: 1-tap luxury segmented toggle switch (`[ EN | తెలుగు ]`).
+- 🌸 **Ambient Floating Petals**: Dynamic falling rose, marigold, and jasmine petals.
+- ⏳ **Live Countdown Timer**: Real-time days, hours, minutes, and seconds countdown to the Muhurtham (23 Aug 2026, 11:29 AM).
+- 📍 **Google Maps Integration**: Direct navigation pin to Aditya Convention A/c, Mamnoor, Warangal.
+- 💑 **Meet the Couple**: High-resolution portraits with animated golden borders.
+- 📞 **1-Tap RSVP & Family Calling Cards**: Instant WhatsApp RSVP and 1-tap direct calling cards for Father, Mother, and Brother.
+- 🖨️ **Save as PDF**: Built-in print styling for saving a high-resolution printable invitation card.
+
+---
+
+## 📂 Project Structure
 
 ```
 divyasri_wedding/
-├── index.html
-├── README.md
-├── background-music.mp3
+├── index.html               # English Wedding Website
+├── telugu.html              # Telugu Wedding Website (తెలుగు ఆహ్వాన పత్రిక)
+├── INVITATION_MESSAGE.md    # WhatsApp & SMS Invitation Message Templates
+├── README.md                # Project Documentation
+├── background-music.mp3     # Classical wedding background music
 ├── images/
-│   ├── door.png             ← the loader temple doors
-│   ├── bg-hero.png          ← hero background (lamps + tilak)
-│   ├── bg-invocation.png    ← Ganesha section background
-│   ├── bg-invitation.png    ← invitation card background
-│   ├── bg-muhurtham.png     ← muhurtham section background
-│   └── bg-couple.png        ← bride & groom section background
+│   ├── og-image-preview.png # OpenGraph social preview banner (1200x630)
+│   ├── divya.jpeg           # Bride portrait
+│   ├── mohan.jpeg           # Groom portrait
+│   ├── door.png             # Loader temple doors
+│   ├── bg-hero.png          # Hero section background
+│   ├── bg-invocation.png    # Invocation section background
+│   ├── bg-invitation.png    # Invitation section background
+│   ├── bg-muhurtham.png     # Muhurtham section background
+│   └── bg-couple.png        # Couple section background
 ```
-
-**Keep the images folder exactly as named** — the HTML references these specific filenames.
 
 ---
 
-## 🚀 Deploy on GitHub Pages (step by step)
+## 📅 Event Details
 
-1. Push your repository to GitHub (`https://github.com/kusuridheeraj/divyasri_wedding`).
-2. Go to **Settings → Pages** in your repository.
-3. Under **Branch**, select `main` and folder `/(root)`.
-4. Click **Save**.
-5. Wait ~1 minute, refresh — your live URL appears at the top:
-   `https://kusuridheeraj.github.io/divyasri_wedding/`
-
-Paste that URL into WhatsApp — the preview card uses the hero image and invitation details automatically.
+- **Date**: Sunday, 23rd August 2026
+- **Sumuhurtham**: 11:29 AM IST (Mula Nakshatram, Thula Lagnam)
+- **Venue**: Aditya Convention A/c., Mamnoor, Warangal
+- **Dining**: Lunch Follows...
 
 ---
 
-## ✏️ Customizing details
+## 👨‍👩‍👧 Family & Contacts
 
-Open `index.html` in any editor (VS Code, Notepad, or GitHub web editor).
-
-### Couple photos (Optional)
-Find the "Meet the Bride & Groom" section, look for `<!-- Replace with: ... -->` comments. Upload `divya.jpg` and `mohan.jpg` into your `images/` folder, then change:
-```html
-<div class="portrait-inner">D</div>
-```
-to:
-```html
-<div class="portrait-inner"><img src="images/divya.jpg" alt="Divya Sri"></div>
-```
-(Same for Mohan Goud, with `images/mohan.jpg`.)
-
-### Wedding date for the live countdown
-Near the bottom of the file in `<script>`, find:
-```js
-const WEDDING_DATE = new Date('2026-08-23T11:29:00+05:30').getTime();
-```
-This is set to **Sunday, 23 August 2026, 11:29 AM IST**.
-
-### WhatsApp RSVP number
-Currently configured for `+91 90142 67074` (`919014267074`). If you want to update it in the future, search for `919014267074` in `index.html`.
-
-### Background music
-The audio toggle plays background music on user interaction. To replace it:
-1. Upload your preferred MP3 file to the repository.
-2. Update the `<audio id="bgAudio">` source in `index.html`.
-
----
-
-## 🎨 What's included
-
-- **Temple-door loader** — sacred temple doors split and slide open on tap/click
-- **Cream & gold temple aesthetic** — matching traditional auspicious colors
-- **Sacred Telugu / Sanskrit invocations** — *Srirasthu ! | Shubamasthu !! | Avignamasthu !!!*
-- **Sumuhurtham Card** — Sunday, 23ʳᵈ August 2026 at 11:29 AM, Mula Nakshatram, Thula Lagnam at Aditya Convention A/c, Mamnoor, Warangal
-- **Live countdown** — auto-updates to 23 August 2026, 11:29 AM IST
-- **WhatsApp + Call RSVP** — integrated with +91 90142 67074
-- **Floating petals** — pink lotus, marigold, and jasmine mix
-- **Single-page Print / PDF card** — clean printable invitation card
-- **Open Graph preview** — customized WhatsApp share card preview
-
----
-
-✦ With love · 23 August 2026 · #DIVYAWEDSMOHAN · #MOHANWEDSDIVYA ✦
+- **Bride's Parents**: Smt. & Sri Kusuri Ramadevi - Srinu Goud (`+91 99480 87571`, `+91 96423 61240`)
+- **Brother**: Kusuri Dheeraj Kumar (`+91 90142 67074`)
+- **Groom's Parents**: Smt. & Sri Gaddam Sumathi - Jithender Goud
