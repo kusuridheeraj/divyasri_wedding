@@ -1655,20 +1655,19 @@ body.entered .scroll-indicator {
     }
     opened = true;
 
-    // Start the music at the SAME moment the doors begin to open.
+    // Ensure music is playing smoothly without resetting playback position
     const audio = document.getElementById('bgAudio');
     const toggle = document.getElementById('audioToggle');
     if (audio) {
-      try { audio.currentTime = 0; } catch (_) {}
-      const p = audio.play();
-      if (p && typeof p.then === 'function') {
-        p.then(() => {
+      audio.muted = false;
+      if (audio.paused) {
+        audio.play().then(() => {
           if (toggle) {
             toggle.classList.add('playing');
             toggle.setAttribute('aria-pressed', 'true');
             toggle.setAttribute('aria-label', 'Pause music');
           }
-        }).catch(() => { /* user can still tap the toggle */ });
+        }).catch(() => {});
       }
     }
 
@@ -1773,96 +1772,60 @@ const countUnits = document.querySelectorAll('.count-unit');
 countUnits.forEach((unit, i) => unit.style.transitionDelay = (i * 0.12) + 's');
 
 /* ============================================
-   5. AUDIO — Start as early as browser policy allows
+   5. AUDIO — Smooth, uninterrupted playback
    ============================================ */
 const audio = document.getElementById('bgAudio');
 const audioBtn = document.getElementById('audioToggle');
-audio.volume = 0.35;
-audio.setAttribute('playsinline', '');
+if (audio) {
+  audio.volume = 0.35;
+  audio.setAttribute('playsinline', '');
 
-let audioStarted = false;
+  const setBtnState = (playing) => {
+    if (!audioBtn) return;
+    audioBtn.classList.toggle('playing', playing);
+    audioBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    audioBtn.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+  };
 
-const setBtnState = (playing) => {
-  if (!audioBtn) return;
-  audioBtn.classList.toggle('playing', playing);
-  audioBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-  audioBtn.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
-};
+  const playMusic = () => {
+    if (!audio.paused && !audio.muted) return Promise.resolve();
+    audio.muted = false;
+    return audio.play().then(() => {
+      removeGestureListeners();
+    }).catch(() => {});
+  };
 
-const tryPlay = () => {
-  if (audioStarted) return Promise.resolve();
-  audio.muted = false;
-  return audio.play().then(() => {
-    audioStarted = true;
-    removeGestureListeners();
-  });
-};
+  if (audioBtn) {
+    audioBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (audio.paused || audio.muted) {
+        playMusic();
+      } else {
+        audio.pause();
+      }
+    });
+  }
 
-// Primary: try unmuted autoplay immediately on load
-const attemptUnmutedAutoplay = () => {
-  audio.muted = false;
-  audio.play().then(() => {
-    audioStarted = true;
-  }).catch(() => {
-    // Fallback 1: muted autoplay (allowed by all browsers) — primes the element
-    audio.muted = true;
-    audio.play().catch(() => {});
-    // Fallback 2: unmute on the very first user gesture of ANY kind
+  audio.addEventListener('play',    () => setBtnState(true));
+  audio.addEventListener('playing', () => setBtnState(true));
+  audio.addEventListener('pause',   () => setBtnState(false));
+  audio.addEventListener('ended',   () => setBtnState(false));
+  audio.addEventListener('volumechange', () => setBtnState(!audio.paused && !audio.muted));
+
+  const gestureEvents = ['click', 'touchstart', 'touchend', 'keydown'];
+  const onGesture = () => { playMusic(); };
+  function addGestureListeners() {
+    gestureEvents.forEach(ev => window.addEventListener(ev, onGesture, { once: true, passive: true }));
+  }
+  function removeGestureListeners() {
+    gestureEvents.forEach(ev => window.removeEventListener(ev, onGesture));
+  }
+
+  // Attempt initial unmuted play; if blocked by browser, attach single gesture listener
+  playMusic().catch(() => {
     addGestureListeners();
   });
-};
-
-const gestureEvents = [
-  'pointerdown', 'pointermove', 'mousedown', 'mousemove',
-  'click', 'touchstart', 'touchmove', 'keydown',
-  'scroll', 'wheel'
-];
-
-const onGesture = () => { tryPlay().catch(() => {}); };
-
-function addGestureListeners() {
-  gestureEvents.forEach(ev =>
-    window.addEventListener(ev, onGesture, { once: true, passive: true, capture: true })
-  );
 }
-function removeGestureListeners() {
-  gestureEvents.forEach(ev =>
-    window.removeEventListener(ev, onGesture, { capture: true })
-  );
-}
-
-// Manual play / pause via the floating button
-if (audioBtn) {
-  audioBtn.addEventListener('click', () => {
-    if (audio.paused || audio.muted) {
-      audio.muted = false;
-      audio.play().then(() => { audioStarted = true; }).catch(() => {});
-    } else {
-      audio.pause();
-    }
-  });
-}
-
-// Keep button icon synced with actual audio state
-audio.addEventListener('play',    () => setBtnState(!audio.muted));
-audio.addEventListener('playing', () => setBtnState(!audio.muted));
-audio.addEventListener('pause',   () => setBtnState(false));
-audio.addEventListener('ended',   () => setBtnState(false));
-audio.addEventListener('volumechange', () => setBtnState(!audio.paused && !audio.muted));
-
-// Kick off as soon as possible
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', attemptUnmutedAutoplay, { once: true });
-} else {
-  attemptUnmutedAutoplay();
-}
-
-// Also retry when the tab becomes visible (helps when link is opened in background tab)
-document.addEventListener('visibilitychange', () => {
-  if (!audioStarted && document.visibilityState === 'visible') {
-    tryPlay().catch(() => {});
-  }
-});
 
 /* ============================================
    6. Subtle parallax on hero text
