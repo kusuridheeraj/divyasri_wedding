@@ -182,7 +182,7 @@ Divya Sri
 🍽️ లంచ్: వివాహానంతరం
 
 డిజిటల్ ఆహ్వాన పత్రిక & లొకేషన్ మ్యాప్:
-👉 https://kusuridheeraj.github.io/divyasri_wedding/
+👉 https://kusuridheeraj.github.io/divyasri_wedding/telugu.html
 
 ఇదే నా వ్యక్తిగత ఆహ్వానంగా భావించి తప్పక రాగలరు!
 
@@ -213,7 +213,7 @@ Divya Sri
 కుసూరి ధీరజ్ కుమార్
 
 డిజిటల్ ఆహ్వాన పత్రిక & లొకేషన్ మ్యాప్:
-👉 https://kusuridheeraj.github.io/divyasri_wedding/
+👉 https://kusuridheeraj.github.io/divyasri_wedding/telugu.html
 ```
 
 ---
@@ -234,7 +234,7 @@ Divya Sri
 కుసూరి రమాదేవి - శ్రీను గౌడ్
 
 పెళ్లి పత్రిక మరియు రూట్ మ్యాప్:
-👉 https://kusuridheeraj.github.io/divyasri_wedding/
+👉 https://kusuridheeraj.github.io/divyasri_wedding/telugu.html
 ```
 
 ---
@@ -254,7 +254,7 @@ Divya Sri
 🍽️ లంచ్: మధ్యాహ్నం 12:30 నుండి
 
 ఇన్విటేషన్ మరియు లొకేషన్ మ్యాప్ కోసం ఈ లింక్ చూడండి:
-👉 https://kusuridheeraj.github.io/divyasri_wedding/
+👉 https://kusuridheeraj.github.io/divyasri_wedding/telugu.html
 
 ఇదే నా వ్యక్తిగత ఆహ్వానంగా భావించి తప్పకుండా రండి!
 
