@@ -623,42 +623,49 @@ body.entered .couple-names .amp {
 
 .hero-date {
   font-family: var(--font-sacred);
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.12rem);
+  font-weight: 600;
   color: var(--maroon);
   margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   opacity: 0;
   position: relative;
   z-index: 10;
-  padding: 0.55rem 1.6rem;
+  padding: 0.6rem 1.8rem;
   background: rgba(253, 246, 231, 0.96);
   border: 1.5px solid var(--gold-rich);
   border-radius: 999px;
   box-shadow: 0 6px 24px rgba(74, 20, 24, 0.12), 0 0 0 3px rgba(253, 246, 231, 0.6);
   backdrop-filter: blur(4px);
-  letter-spacing: 0.08em;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 body.entered .hero-date {
   animation: fadeUp 1.2s ease 2.9s forwards;
 }
-.hero-date .date-num {
+.hero-date .date-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1em;
+  line-height: 1;
+}
+.hero-date .date-item.date-num {
   color: var(--maroon-deep);
   font-weight: 700;
-  font-size: 1.08em;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
-.hero-date .date-month {
+.hero-date .date-item.date-month {
   color: var(--gold-rich);
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
 }
-.hero-date .date-sep {
+.hero-date .date-bullet {
   color: var(--gold-rich);
   font-size: 0.85em;
+  opacity: 0.85;
 }
 
 .scroll-indicator {
@@ -1105,19 +1112,66 @@ body.entered .scroll-indicator {
   background: var(--maroon);
   color: var(--cream-light);
 }
-.rsvp-phone {
-  margin-top: 2.5rem;
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--maroon);
-  opacity: 0.75;
-  font-size: 1.05rem;
+.rsvp-contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  max-width: 800px;
+  margin: 2.5rem auto 0;
 }
-.rsvp-phone strong {
-  font-style: normal;
+.contact-card {
+  background: rgba(253, 246, 231, 0.92);
+  border: 1.5px solid var(--gold-rich);
+  border-radius: 4px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(74, 20, 24, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(184, 134, 46, 0.25);
+}
+.contact-role {
+  display: block;
+  font-family: var(--font-sacred);
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   color: var(--gold-rich);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.contact-name {
+  display: block;
+  font-family: var(--font-sacred);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-weight: 700;
+  color: var(--maroon-deep);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+.contact-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1.1rem;
+  font-family: var(--font-sacred);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  color: var(--maroon);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--gold-rich);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.contact-call-btn:hover {
+  background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold-rich) 100%);
+  color: var(--cream-light);
+  border-color: var(--gold-rich);
+  box-shadow: 0 4px 12px rgba(184, 134, 46, 0.35);
 }
 
 /* ============================================
@@ -1257,13 +1311,13 @@ body.entered .scroll-indicator {
       <span class="name maroon-shimmer">Mohan Goud</span>
     </h1>
     <div class="hero-date">
-      <span class="date-sep">✦</span>
-      <span class="date-num">23</span>
-      <span class="date-sep">·</span>
-      <span class="date-month">August</span>
-      <span class="date-sep">·</span>
-      <span class="date-num">2026</span>
-      <span class="date-sep">✦</span>
+      <span class="date-bullet">✦</span>
+      <span class="date-item date-num">23</span>
+      <span class="date-bullet">·</span>
+      <span class="date-item date-month">AUGUST</span>
+      <span class="date-bullet">·</span>
+      <span class="date-item date-num">2026</span>
+      <span class="date-bullet">✦</span>
     </div>
   </div>
   <button type="button"
@@ -1328,9 +1382,9 @@ body.entered .scroll-indicator {
         <span style="display:inline-block; margin-top:0.35rem; color:var(--gold-rich); font-weight:600; font-family:var(--font-sacred); letter-spacing:0.1em; font-size:0.85rem;">Lunch Follows...</span>
         <div>
           <a class="directions-btn"
-             href="https://www.google.com/maps/search/?api=1&query=Aditya+Convention+Mamnoor+Warangal"
+             href="https://maps.app.goo.gl/iFcoi8BL2iCna99v5"
              target="_blank" rel="noopener"
-             aria-label="Get directions to Aditya Convention Mamnoor Warangal on Google Maps">
+             aria-label="Get directions to Aditya AC convention Mamnoor Warangal on Google Maps">
             <span class="pin" aria-hidden="true">📍</span> Get Directions
           </a>
         </div>
@@ -1379,14 +1433,14 @@ body.entered .scroll-indicator {
       <div class="couple-portraits">
         <div class="portrait-circle">
           <div class="portrait-inner">
-            <!-- Replace with: <img src="divya.jpg" alt="Divya Sri"> -->
+            <!-- Replace with: <img src="images/divya.jpg" alt="Divya Sri"> -->
             D
           </div>
         </div>
         <span class="couple-amp-small">&amp;</span>
         <div class="portrait-circle">
           <div class="portrait-inner">
-            <!-- Replace with: <img src="mohan.jpg" alt="Mohan Goud"> -->
+            <!-- Replace with: <img src="images/mohan.jpg" alt="Mohan Goud"> -->
             M
           </div>
         </div>
@@ -1409,7 +1463,7 @@ body.entered .scroll-indicator {
 </section>
 
 <!-- ============================================
-     RSVP
+     RSVP & FAMILY CONTACTS
      ============================================ -->
 <section class="rsvp">
   <div class="container">
@@ -1433,19 +1487,35 @@ body.entered .scroll-indicator {
         </svg>
         RSVP on WhatsApp
       </a>
-
-      <a class="rsvp-btn secondary" href="tel:+919014267074">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        Call to Confirm
-      </a>
     </div>
 
-    <p class="rsvp-phone reveal-up">
-      <strong>+91 90142 67074</strong><br>
-      <em>Looking forward to seeing you</em>
-    </p>
+    <!-- Family Contact Cards -->
+    <div class="rsvp-contacts-grid reveal-up">
+      <div class="contact-card">
+        <span class="contact-role">Father</span>
+        <span class="contact-name">Kusuri Srinu Goud</span>
+        <a class="contact-call-btn" href="tel:+919948087571" aria-label="Call Kusuri Srinu Goud">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 99480 87571
+        </a>
+      </div>
+      <div class="contact-card">
+        <span class="contact-role">Mother</span>
+        <span class="contact-name">Kusuri Ramadevi</span>
+        <a class="contact-call-btn" href="tel:+919642361240" aria-label="Call Kusuri Ramadevi">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 96423 61240
+        </a>
+      </div>
+      <div class="contact-card">
+        <span class="contact-role">Brother</span>
+        <span class="contact-name">Kusuri Dheeraj Kumar</span>
+        <a class="contact-call-btn" href="tel:+919014267074" aria-label="Call Kusuri Dheeraj Kumar">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 90142 67074
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
